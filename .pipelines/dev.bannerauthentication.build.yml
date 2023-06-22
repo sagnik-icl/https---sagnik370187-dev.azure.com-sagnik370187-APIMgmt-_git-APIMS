@@ -1,21 +1,21 @@
 pool:
   name: Azure Pipelines
 variables:
-  files: '"apis/Banner BAPI/templates/*"'
-  blobContainer: '"https://stgaccountapims.blob.core.windows.net/apimms/templates/?sv=2022-11-02&ss=b&srt=sco&sp=rwdlaciytfx&se=2023-07-08T05:19:20Z&st=2023-06-21T21:19:20Z&spr=https&sig=gx%2FZ9O0UemVSmE2mJoLU2osxNq%2BVUqfY6DbCblJIheE%3D"'
+  files: '"apis/Banner Authentication/templates/*"'
+  blobContainer: '"https://stgaccountapims.blob.core.windows.net/bannerauthentication/templates/?sv=2022-11-02&ss=b&srt=sco&sp=rwdlaciytfx&se=2023-07-08T05:19:20Z&st=2023-06-21T21:19:20Z&spr=https&sig=gx%2FZ9O0UemVSmE2mJoLU2osxNq%2BVUqfY6DbCblJIheE%3D"'
   spUsername: '"5ca29031-f8fa-4d90-9f7a-6ea6d5e3a2a1"'
   spPassword: '"lxj8Q~-b_w7AiCEGgy-cNlKGiwKFQoRIy3HJdaZc"'
   spTenant: '"8c0cd743-7c06-4810-b2d0-0670ce8cda6e"'
   subscriptionid: '159c2a84-28cd-44f3-abc9-15398546d499'
   resourceGroupName: 'dev-icint-eip-apim-002-rg'
   location: 'West India'
-  bannerbapicsmFile: 'apis/Banner BAPI/templates/dev-icint-eip-apim-003-apim-master.template.json'
-  bannerbapicsmParametersFile: 'apis/Banner BAPI/templates/dev-icint-eip-apim-003-apim-parameters.json'
+  bannerbapicsmFile: 'apis/Banner Authentication/templates/dev-icint-eip-apim-003-apim-master.template.json'
+  bannerbapicsmParametersFile: 'apis/Banner Authentication/templates/dev-icint-eip-apim-003-apim-parameters.json'
   ApimServiceName: '"test-icint-eip-apim-001-apim"'
-  LinkedTemplatesBaseUrl: '"https://stgaccountapims.blob.core.windows.net/apimms/templates"'
-  PolicyXMLBaseUrl: '"https://stgaccountapims.blob.core.windows.net/apimms/policies"'
+  LinkedTemplatesBaseUrl: '"https://stgaccountapims.blob.core.windows.net/bannerauthentication/templates"'
+  PolicyXMLBaseUrl: '"https://stgaccountapims.blob.core.windows.net/bannerauthentication/policies"'
   PolicyXMLSasToken: '"?sv=2022-11-02&ss=b&srt=sco&sp=rwdlaciytfx&se=2023-07-08T05:19:20Z&st=2023-06-21T21:19:20Z&spr=https&sig=gx%2FZ9O0UemVSmE2mJoLU2osxNq%2BVUqfY6DbCblJIheE%3D"'
-  PathtoPublish: 'apis/Banner BAPI/templates'
+  PathtoPublish: 'apis/Banner Authentication/templates'
   servieConnection: Dev
 
 steps:

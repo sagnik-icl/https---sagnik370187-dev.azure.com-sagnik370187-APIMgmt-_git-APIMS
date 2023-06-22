@@ -1,0 +1,165 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    },
+    "PolicyXMLSasToken": {
+      "type": "string"
+    },
+    "PolicyXMLBaseUrl": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "description": "",
+        "authenticationSettings": {
+          "subscriptionKeyRequired": false
+        },
+        "subscriptionKeyParameterNames": {
+          "header": "Ocp-Apim-Subscription-Key",
+          "query": "subscription-key"
+        },
+        "apiRevision": "1",
+        "isCurrent": true,
+        "subscriptionRequired": true,
+        "displayName": "Coursera BAPI",
+        "serviceUrl": "https://api.coursera.org/api",
+        "path": "coursera-bapi",
+        "protocols": [
+          "https"
+        ]
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/coursera-bapi')]",
+      "type": "Microsoft.ApiManagement/service/apis",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": []
+    },
+    {
+      "properties": {
+        "templateParameters": [
+          {
+            "name": "orgid",
+            "type": "",
+            "required": true,
+            "values": []
+          }
+        ],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Content-Type",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "CreateUpdateApplication",
+        "method": "POST",
+        "urlTemplate": "/{orgid}/educatorProgramApplications.v1?action=createOrUpdate"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/coursera-bapi/createupdateapplication')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'coursera-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [
+          {
+            "name": "orgid",
+            "type": "",
+            "required": true,
+            "values": []
+          }
+        ],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Content-Type",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "CreateUpdateProgramTerm",
+        "method": "POST",
+        "urlTemplate": "/{orgid}/educatorProgramTerms.v1?action=createOrUpdate"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/coursera-bapi/createcourseraterm')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'coursera-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [
+          {
+            "name": "orgid",
+            "type": "",
+            "required": true,
+            "values": []
+          }
+        ],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Content-Type",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "CreateUpdateStudent",
+        "method": "POST",
+        "urlTemplate": "/{orgid}/educatorStudents.v1?action=createOrUpdate"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/coursera-bapi/createupdatestudent')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'coursera-bapi')]"
+      ]
+    }
+  ]
+}
