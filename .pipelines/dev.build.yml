@@ -1,0 +1,15 @@
+# CI pipeline for the dev environment.
+
+trigger:
+- develop
+
+pr: none
+
+pool:
+  name: 'self-hosted-20-04-ubuntu'
+
+variables:
+- template: variables/dev.pipeline-vars.yml
+
+jobs:
+- template: templates/build-template.yml

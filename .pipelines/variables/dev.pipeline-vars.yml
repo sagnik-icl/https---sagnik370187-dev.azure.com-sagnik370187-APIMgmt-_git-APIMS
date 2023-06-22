@@ -1,0 +1,33 @@
+variables:
+  # Environment
+  environment: 'dev'
+
+  # Subscription
+  subscriptionId: 314ffcd2-5b05-4c78-befc-637f1a5d617e 
+
+  # Resource Group
+  resourceGroupLocation: 'uksouth'
+  resourceGroupName: 'dev-icint-eip-banner-002-rg'
+
+  # Key Vault
+  keyVaultName: 'dev-icint-eip-dataverse-002-rg'
+
+  # Logic App
+  logicAppName: 'dev-icint-eip-banner-002-logic-app1'
+
+  # API Connections
+  oracleServiceConnection: 'oracle-21'
+  oracleServiceConnectionRuntimeUrl: 'https://b46118a57e00ab5d.00.common.logic-uksouth.azure-apihub.net/apim/oracle/635db878e7d8423d8059a8ec64d3cae5'
+  serviceBusConnection: 'servicebus-15'
+  serviceBusConnectionRuntimeUrl: 'https://b46118a57e00ab5d.00.common.logic-uksouth.azure-apihub.net/apim/servicebus/380ec5db93944a51b6fb29bf82e84331'
+  serviceBusFullyQualifiedNamespace: 'dev-udp-001-servicebus.servicebus.windows.net'
+
+  # Configurations
+  apiManagementEndpoint: '@Microsoft.KeyVault(VaultName=$(keyVaultName);SecretName=dev-icint-core-api-management-endpoint)'
+  bannerAuthApiSubValue: '@Microsoft.KeyVault(VaultName=$(keyVaultName);SecretName=dev-icint-banner-api-subscription-key)'
+  bannerProxyKey: '@Microsoft.KeyVault(VaultName=$(keyVaultName);SecretName=dev-icint-banner-bapi-proxy-key)'
+  bannerAccessTokenEndpoint: 'bannerauth/auth'
+  circuitBreakerEndpoint: '@Microsoft.KeyVault(VaultName=icldevudp001kv;SecretName=dev-logicapp-circuitbreaker-endpoint)'
+
+  # Project Artifacts
+  logicAppCIArtifactName: 'logicapp_publish_artifact'

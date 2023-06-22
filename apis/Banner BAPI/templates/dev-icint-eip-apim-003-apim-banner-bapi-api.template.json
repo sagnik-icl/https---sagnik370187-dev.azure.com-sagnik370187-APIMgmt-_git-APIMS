@@ -1,0 +1,1464 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ApimServiceName": {
+      "type": "string"
+    },
+    "PolicyXMLSasToken": {
+      "type": "string"
+    },
+    "PolicyXMLBaseUrl": {
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "properties": {
+        "description": "",
+        "authenticationSettings": {
+          "subscriptionKeyRequired": false
+        },
+        "subscriptionKeyParameterNames": {
+          "header": "Ocp-Apim-Subscription-Key",
+          "query": "subscription-key"
+        },
+        "apiRevision": "1",
+        "isCurrent": true,
+        "subscriptionRequired": true,
+        "displayName": "Banner BAPI",
+        "serviceUrl": "https://integrate.elluciancloud.ie/api/general-person-identification-email",
+        "path": "banner-business-api",
+        "protocols": [
+          "https"
+        ]
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi')]",
+      "type": "Microsoft.ApiManagement/service/apis",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": []
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "CreateAdmissionChecklist",
+        "method": "POST",
+        "urlTemplate": "/admissions-application-checklist"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f5bbf10c0dd842b44fa1')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f5bbf10c0dd842b44fa1-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f5bbf10c0dd842b44fa1/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f5bbf10c0dd842b44fa1')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "CreateAdmissionCurriCula",
+        "method": "POST",
+        "urlTemplate": "/admissions-application-curricula"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f62cee0385d4dedb8fc5')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f62cee0385d4dedb8fc5-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f62cee0385d4dedb8fc5/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f62cee0385d4dedb8fc5')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "CreateCollegeDegree",
+        "method": "POST",
+        "urlTemplate": "/prior-college-prior-college-and-degree"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f5737b41ed2511b5f259')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f5737b41ed2511b5f259-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f5737b41ed2511b5f259/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f5737b41ed2511b5f259')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "CreateEmeregencyContact",
+        "method": "POST",
+        "urlTemplate": "/emergency-contacts"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f827c29cb0bf2b3a58e4')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f827c29cb0bf2b3a58e4-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f827c29cb0bf2b3a58e4/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f827c29cb0bf2b3a58e4')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "CreatePersonAddress",
+        "method": "POST",
+        "urlTemplate": "/general-person-identification-address"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491eee84925ae672e961222')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491eee84925ae672e961222-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491eee84925ae672e961222/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491eee84925ae672e961222')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "CreatePersonBiographical",
+        "method": "POST",
+        "urlTemplate": "/general-person-identification-biographical"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f7aea46aa8af09a643fa')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f7aea46aa8af09a643fa-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f7aea46aa8af09a643fa/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f7aea46aa8af09a643fa')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "CreatePersonEmail",
+        "method": "POST",
+        "urlTemplate": "/general-person-identification-email"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/createpersonemail')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "CreatePersonMedicalInformation",
+        "method": "POST",
+        "urlTemplate": "/medical-information"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f4e7ca2973be7676c6a2')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f4e7ca2973be7676c6a2-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f4e7ca2973be7676c6a2/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f4e7ca2973be7676c6a2')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "CreatePersonTelephone",
+        "method": "POST",
+        "urlTemplate": "/general-person-identification-telephone"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f741203e725ac6e0a787')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f741203e725ac6e0a787-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f741203e725ac6e0a787/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f741203e725ac6e0a787')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "CreateTestScore",
+        "method": "POST",
+        "urlTemplate": "/test-score-information"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f6dd6eb788785caef215')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f6dd6eb788785caef215-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f6dd6eb788785caef215/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f6dd6eb788785caef215')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [
+            {
+              "name": "id",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "GetAdmissionChecklist",
+        "method": "GET",
+        "urlTemplate": "/admissions-application-checklist"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f5d2ad8905312972871c')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f5d2ad8905312972871c-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f5d2ad8905312972871c/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f5d2ad8905312972871c')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [
+            {
+              "name": "id",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "GetAdmissionCurriCula",
+        "method": "GET",
+        "urlTemplate": "/admissions-application-curricula"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f6162d327f6931631f82')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f6162d327f6931631f82-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f6162d327f6931631f82/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f6162d327f6931631f82')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [
+            {
+              "name": "id",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "GetCollegeDegree",
+        "method": "GET",
+        "urlTemplate": "/prior-college-prior-college-and-degree"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f557cec9fa00d1a9de6c')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f557cec9fa00d1a9de6c-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f557cec9fa00d1a9de6c/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f557cec9fa00d1a9de6c')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [
+            {
+              "name": "id",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "GetEmeregencyContact",
+        "method": "GET",
+        "urlTemplate": "/emergency-contacts"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f840510c97bfb72ba789')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f840510c97bfb72ba789-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f840510c97bfb72ba789/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f840510c97bfb72ba789')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [
+            {
+              "name": "id",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "GetPersonAddress",
+        "method": "GET",
+        "urlTemplate": "/general-person-identification-address"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491ef293bcff8c693964e87')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491ef293bcff8c693964e87-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491ef293bcff8c693964e87/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491ef293bcff8c693964e87')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [
+            {
+              "name": "id",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "GetPersonBiographical",
+        "method": "GET",
+        "urlTemplate": "/general-person-identification-biographical"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f7c4b32acfd0ebf72545')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f7c4b32acfd0ebf72545-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f7c4b32acfd0ebf72545/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f7c4b32acfd0ebf72545')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [
+            {
+              "name": "id",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "GetPersonEmail",
+        "method": "GET",
+        "urlTemplate": "/general-person-identification-email"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/getpersonemail')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [
+            {
+              "name": "id",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "GetPersonMedicalInformation",
+        "method": "GET",
+        "urlTemplate": "/medical-information"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f4c4b3d2d72fb0471aa5')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f4c4b3d2d72fb0471aa5-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f4c4b3d2d72fb0471aa5/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f4c4b3d2d72fb0471aa5')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [
+            {
+              "name": "id",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "GetPersonTelephone",
+        "method": "GET",
+        "urlTemplate": "/general-person-identification-telephone"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f7561fe79b1ddb328dac')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f7561fe79b1ddb328dac-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f7561fe79b1ddb328dac/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f7561fe79b1ddb328dac')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [
+            {
+              "name": "id",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "GetTestScore",
+        "method": "GET",
+        "urlTemplate": "/test-score-information"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f6b595aa837db187cccc')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f6b595aa837db187cccc-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f6b595aa837db187cccc/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f6b595aa837db187cccc')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "UpdateAdmissionChecklist",
+        "method": "PUT",
+        "urlTemplate": "/admissions-application-checklist"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f5ec66681ce1f42dace0')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f5ec66681ce1f42dace0-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f5ec66681ce1f42dace0/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f5ec66681ce1f42dace0')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "UpdateAdmissionCurriCula",
+        "method": "PUT",
+        "urlTemplate": "/admissions-application-curricula"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f645fc3910bca3ac928a')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f645fc3910bca3ac928a-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f645fc3910bca3ac928a/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f645fc3910bca3ac928a')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "UpdateCollegeDegree",
+        "method": "PUT",
+        "urlTemplate": "/prior-college-prior-college-and-degree"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f5895ecf7892f14a8b33')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f5895ecf7892f14a8b33-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f5895ecf7892f14a8b33/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f5895ecf7892f14a8b33')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "UpdateEmeregencyContact",
+        "method": "PUT",
+        "urlTemplate": "/emergency-contacts"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f857fab4a2ed88cf35a8')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f857fab4a2ed88cf35a8-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f857fab4a2ed88cf35a8/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f857fab4a2ed88cf35a8')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "UpdatePersonAddress",
+        "method": "PUT",
+        "urlTemplate": "/general-person-identification-address"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491ef44cab07d28298c7e2b')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491ef44cab07d28298c7e2b-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491ef44cab07d28298c7e2b/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491ef44cab07d28298c7e2b')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "UpdatePersonBiographical",
+        "method": "PUT",
+        "urlTemplate": "/general-person-identification-biographical"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f7dd6f5a8bbb05e178fb')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f7dd6f5a8bbb05e178fb-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f7dd6f5a8bbb05e178fb/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f7dd6f5a8bbb05e178fb')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "UpdatePersonEmail",
+        "method": "PUT",
+        "urlTemplate": "/general-person-identification-email"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/updatepersonemail')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "UpdatePersonMedicalInformation",
+        "method": "PUT",
+        "urlTemplate": "/medical-information"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f5271b491ed631f8f453')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f5271b491ed631f8f453-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f5271b491ed631f8f453/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f5271b491ed631f8f453')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "UpdatePersonTelephone",
+        "method": "PUT",
+        "urlTemplate": "/general-person-identification-telephone"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f769ec17f65b0eefbb5a')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f769ec17f65b0eefbb5a-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f769ec17f65b0eefbb5a/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f769ec17f65b0eefbb5a')]"
+      ]
+    },
+    {
+      "properties": {
+        "templateParameters": [],
+        "description": "",
+        "request": {
+          "queryParameters": [],
+          "headers": [
+            {
+              "name": "Authorization",
+              "type": "",
+              "required": true,
+              "values": []
+            },
+            {
+              "name": "Accept",
+              "type": "",
+              "required": true,
+              "values": []
+            }
+          ],
+          "representations": []
+        },
+        "responses": [],
+        "displayName": "UpdateTestScore",
+        "method": "PUT",
+        "urlTemplate": "/test-score-information"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f6c944a95b9d15877c8a')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-6491f6c944a95b9d15877c8a-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/6491f6c944a95b9d15877c8a/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', '6491f6c944a95b9d15877c8a')]"
+      ]
+    },
+    {
+      "name": "[concat(parameters('ApimServiceName'), '/Banner/banner-bapi')]",
+      "type": "Microsoft.ApiManagement/service/products/apis",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    }
+  ]
+}

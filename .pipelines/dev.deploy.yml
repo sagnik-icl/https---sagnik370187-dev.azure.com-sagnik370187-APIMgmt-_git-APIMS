@@ -1,0 +1,24 @@
+# CD pipeline for the dev environment.
+
+trigger: none
+
+pr: none
+
+pool:
+  name: 'self-hosted-20-04-ubuntu'
+
+variables:
+- template: variables/dev.pipeline-vars.yml
+
+resources:
+  pipelines:
+  - pipeline: buildpipeline
+    source: 'bannerworkflows.eip.dev.build'
+    trigger:
+      branches:
+      - develop
+
+jobs:
+- template: templates/deploy-template.yml
+  parameters:
+    serviceConnection: 'DevServiceConnection'

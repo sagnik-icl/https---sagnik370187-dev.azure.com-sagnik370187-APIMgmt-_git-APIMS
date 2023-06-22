@@ -1,0 +1,25 @@
+# CD pipeline template.
+
+parameters:
+- name: serviceConnection
+  type: string
+
+jobs:
+  - deployment: deploy_logicapp_resources
+    displayName: Deploy logic app
+    environment: $(environment)
+    variables:
+      deploymentMode: 'Incremental'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: AzureFunctionApp@1
+            displayName: 'Deploy logic app workflows'
+            inputs:
+              azureSubscription: ${{ parameters.serviceConnection }}
+              appType: 'functionApp'
+              appName: '$(logicAppName)'
+              package: '$(Pipeline.Workspace)/buildpipeline/$(logicAppCIArtifactName)/$(resources.pipeline.buildpipeline.runID).zip'
+              deploymentMethod: 'zipDeploy'
+              appSettings: "-WORKFLOWS_SUBSCRIPTION_ID $(subscriptionId) -WORKFLOWS_LOCATION_NAME $(resourceGroupLocation) -WORKFLOWS_RESOURCE_GROUP_NAME $(resourceGroupName) -COMMONDATASERVICE_CONNECTION $(commonDataServiceConnection) -COMMONDATASERVICE_CONNECTION_RUNTIMEURL $(commonDataServiceConnectionRuntimeUrl) -SERVICEBUS_CONNECTION $(serviceBusConnection) -SERVICEBUS_CONNECTION_RUNTIMEURL $(serviceBusConnectionRuntimeUrl) -SERVICEBUS_FULLY_QUALIFIED_NAMESPACE $(serviceBusFullyQualifiedNamespace) -DYNAMICS_365_ENDPOINT $(dataverseBaseUrl) -CIRCUIT_BREAKER_ENDPOINT $(circuitBreakerEndpoint)"
