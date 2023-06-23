@@ -350,6 +350,18 @@
     },
     {
       "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-createpersonemail-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/createpersonemail/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', 'createpersonemail')]"
+      ]
+    },
+    {
+      "properties": {
         "templateParameters": [],
         "description": "",
         "request": {
@@ -847,6 +859,18 @@
     },
     {
       "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-getpersonemail-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/getpersonemail/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', 'getpersonemail')]"
+      ]
+    },
+    {
+      "properties": {
         "templateParameters": [],
         "description": "",
         "request": {
@@ -1312,6 +1336,18 @@
       "apiVersion": "2021-01-01-preview",
       "dependsOn": [
         "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'banner-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/banner-bapi-updatepersonemail-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/banner-bapi/updatepersonemail/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'banner-bapi', 'updatepersonemail')]"
       ]
     },
     {

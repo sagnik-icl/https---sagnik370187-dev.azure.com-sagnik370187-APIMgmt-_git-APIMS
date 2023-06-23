@@ -69,6 +69,18 @@
       ]
     },
     {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/bannerauthentication-auth-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/bannerauthentication/auth/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'bannerauthentication', 'auth')]"
+      ]
+    },
+    {
       "name": "[concat(parameters('ApimServiceName'), '/Banner/bannerauthentication')]",
       "type": "Microsoft.ApiManagement/service/products/apis",
       "apiVersion": "2021-01-01-preview",

@@ -58,6 +58,18 @@
       "dependsOn": [
         "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'coursera-authentication')]"
       ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/coursera-authentication-getcourseraaccesstoken-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/coursera-authentication/getcourseraaccesstoken/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'coursera-authentication', 'getcourseraaccesstoken')]"
+      ]
     }
   ]
 }

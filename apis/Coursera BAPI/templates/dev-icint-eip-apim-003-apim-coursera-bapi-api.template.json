@@ -81,6 +81,18 @@
     },
     {
       "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/coursera-bapi-createupdateapplication-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/coursera-bapi/createupdateapplication/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'coursera-bapi', 'createupdateapplication')]"
+      ]
+    },
+    {
+      "properties": {
         "templateParameters": [
           {
             "name": "orgid",
@@ -122,6 +134,18 @@
     },
     {
       "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/coursera-bapi-createcourseraterm-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/coursera-bapi/createcourseraterm/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'coursera-bapi', 'createcourseraterm')]"
+      ]
+    },
+    {
+      "properties": {
         "templateParameters": [
           {
             "name": "orgid",
@@ -159,6 +183,18 @@
       "apiVersion": "2021-01-01-preview",
       "dependsOn": [
         "[resourceId('Microsoft.ApiManagement/service/apis', parameters('ApimServiceName'), 'coursera-bapi')]"
+      ]
+    },
+    {
+      "properties": {
+        "value": "[concat(parameters('PolicyXMLBaseUrl'), '/coursera-bapi-createupdatestudent-operationPolicy.xml', parameters('PolicyXMLSasToken'))]",
+        "format": "rawxml-link"
+      },
+      "name": "[concat(parameters('ApimServiceName'), '/coursera-bapi/createupdatestudent/policy')]",
+      "type": "Microsoft.ApiManagement/service/apis/operations/policies",
+      "apiVersion": "2021-01-01-preview",
+      "dependsOn": [
+        "[resourceId('Microsoft.ApiManagement/service/apis/operations', parameters('ApimServiceName'), 'coursera-bapi', 'createupdatestudent')]"
       ]
     }
   ]
